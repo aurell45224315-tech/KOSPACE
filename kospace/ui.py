@@ -108,15 +108,14 @@ html, body, [class*="st-"] {
 [data-testid="stSidebar"] hr {border-color: rgba(255,255,255,.10);}
 
 /* Brand */
-.ks-brand {display:flex; align-items:center; gap:12px; padding:4px 2px 20px;}
-.ks-brand-logo {
-  width:46px; height:46px; border-radius:14px;
-  background: linear-gradient(135deg, #2dd4bf, #0e7490);
+.ks-brand {padding:2px 2px 18px; text-align:center;}
+.ks-brand-card {
+  background:#fff; border-radius:16px; padding:14px 18px;
   display:flex; align-items:center; justify-content:center;
-  font-size:23px; box-shadow: 0 12px 26px rgba(13,148,136,.35);
+  box-shadow: 0 12px 26px rgba(0,0,0,.28);
 }
-.ks-brand-name {font-size:20px; font-weight:800; letter-spacing:1.2px; color:#fff; line-height:1.05;}
-.ks-brand-sub {font-size:9px; letter-spacing:1.8px; text-transform:uppercase; color:#99f6e4; margin-top:3px;}
+.ks-brand-card img {width:100%; max-width:190px; height:auto; display:block;}
+.ks-brand-tag {font-size:9px; letter-spacing:2.2px; text-transform:uppercase; color:#99f6e4; margin-top:10px;}
 
 /* Sidebar mini cards */
 .ks-side-card {

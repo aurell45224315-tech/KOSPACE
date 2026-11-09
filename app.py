@@ -5,14 +5,21 @@ Jalankan dengan:  streamlit run app.py
 
 from __future__ import annotations
 
+import base64
+from pathlib import Path
+
 import streamlit as st
+
+_ASSETS = Path(__file__).resolve().parent / "assets"
 
 st.set_page_config(
     page_title="KOSPACE · Administrasi Kos",
-    page_icon="🏡",
+    page_icon=str(_ASSETS / "kospace-mark.png"),
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+_LOGO_B64 = base64.b64encode((_ASSETS / "kospace-logo.png").read_bytes()).decode("ascii")
 
 from kospace import db, logic, ui  # noqa: E402
 from kospace.views import (  # noqa: E402
@@ -58,13 +65,12 @@ def _siapkan_navigasi() -> None:
 def _sidebar() -> str:
     with st.sidebar:
         st.markdown(
-            """
+            f"""
             <div class="ks-brand">
-              <div class="ks-brand-logo">🏡</div>
-              <div>
-                <div class="ks-brand-name">KOSPACE</div>
-                <div class="ks-brand-sub">Administrasi Kos</div>
+              <div class="ks-brand-card">
+                <img src="data:image/png;base64,{_LOGO_B64}" alt="KOSPACE" />
               </div>
+              <div class="ks-brand-tag">Administrasi Kos</div>
             </div>
             """,
             unsafe_allow_html=True,
