@@ -1,0 +1,375 @@
+﻿
+=== PAGE 1 ===
+ SISTEM ADMINISTRASI
+PENGELOLAAN KOS KOSPACE
+Mata kuliah Pemrograman Bisnis & Perancangan Sistem Administrasi
+Dosen pengampu: Dwi Budi Santoso, S.Kom., M.Kom.
+Kelompok 4
+Alya Nafisah 4.52.24.3.02
+Marensya Aurellya 4.52.24.3.15
+Permata Rayya A. A. 4.52.24.3.21
+Shintia Nova P . A. 4.52.24.3.25
+
+=== PAGE 2 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Gambaran Umum KOSPACE
+Apa itu KOSPACE?
+KOSPACE adalah sistem informasi untuk membantu pemilik kos 
+putri mengelola administrasi: data kamar , identitas penghuni, 
+masa sewa, dan pembayaran.
+Sistem dibuat dengan Python dan Streamlit, dengan 
+penyimpanan SQLite. Dengan begitu data lebih terstruktur , 
+mudah dicari, dan riwayatnya bisa diperiksa kapan saja.
+25
+kamar dalam tiga tipe:
+ΓÇó A01ΓÇôA05: AC, Wi-Fi, kamar mandi 
+dalam, Rp1.300.000
+ΓÇó B01ΓÇôB10: AC, Wi-Fi, kamar mandi 
+luar, Rp950.000
+ΓÇó C01ΓÇôC10: kipas angin, Wi-Fi, kamar 
+mandi luar, Rp700.000
+4
+tabel utama: Kamar, Penghuni, Sewa, 
+Pembayaran
+1 pengguna: pemilik kos
+2
+
+=== PAGE 3 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Latar Belakang, Permasalahan, dan Solusi
+Latar Belakang Pengelolaan kos mencakup pencatatan kamar, penghuni, sewa, dan pembayaran. Semua data itu perlu tertata agar pemilik bisa memantau administrasi dan memeriksa riwayatnya kapan saja.
+Permasalahan Akibat Solusi
+1
+Data kamar, penghuni, dan sewa dicatat 
+sendiri di buku dan WhatsApp, sehingga 
+terpisah-pisah.
+Pemilik sulit mencari dan mencocokkan 
+data.
+Semua data disimpan rapi dalam satu sistem dan 
+mudah dicari.
+2 Ketersediaan kamar dan masa sewa belum tercatat di satu tempat. Pemilik bisa salah menentukan kamar kosong atau menerima sewa dengan jadwal bertabrakan. Status kamar diperbarui otomatis, dan jadwal yang bertabrakan terdeteksi sebelum data disimpan.
+3 Pembayaran belum terhubung dengan data sewa. Memeriksa pembayaran dan riwayat transaksi penghuni memakan waktu. Pembayaran per periode terhubung ke sewa, statusnya otomatis, dan riwayatnya bisa ditelusuri.
+KOSPACE mengelola data kamar, penghuni, sewa, dan pembayaran secara terstruktur dalam satu sistem.
+3
+
+=== PAGE 4 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Tujuan Perancangan Sistem
+01
+Mempermudah pengelolaan data 
+kamar dan penghuni.
+02
+Memeriksa ketersediaan kamar 
+secara otomatis.
+03
+Mencatat sewa dan masa sewa 
+secara rapi.
+04
+Mencatat pembayaran tiap bulan 
+beserta statusnya.
+05
+Mencegah jadwal sewa 
+bertabrakan di kamar yang sama.
+06
+Menjaga riwayat sewa dan 
+pembayaran tetap aman.
+4
+
+=== PAGE 5 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Pengguna dan Ruang Lingkup Sistem
+Pengguna sistem
+ΓÇó Pemilik kos mengelola semua 
+data lewat satu sistem.
+ΓÇó Penghuni tidak menggunakan 
+sistem.
+Ruang lingkup
+ΓÇó Dashboard ringkasan data kos.
+ΓÇó Tambah, lihat, ubah, dan hapus 
+data kamar, penghuni, sewa, dan 
+pembayaran.
+ΓÇó Detail transaksi dan riwayat.
+Batasan sistem
+ΓÇó Belum ada login dan pemesanan 
+mandiri.
+ΓÇó Belum ada pembayaran online, 
+deposit, dan token listrik.
+ΓÇó Belum ada kuitansi, pengingat 
+WhatsApp, dan peluncuran 
+sistem ke internet (deployment).
+Semua proses dilakukan pemilik kos lewat satu sistem, tanpa akses langsung dari penghuni.
+5
+
+=== PAGE 6 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Fitur Utama Sistem dan Prioritasnya
+Dashboard Ringkasan
+Menampilkan jumlah kamar, kamar 
+tersedia dan ditempati, sewa aktif, serta 
+pembayaran bulan ini.
+Pendukung
+Pengelolaan Kamar
+Mencatat nomor, tipe, harga, dan 
+fasilitas. Status kamar diperbarui 
+otomatis.
+Utama
+Pengelolaan Penghuni
+Menyimpan nama, nomor telepon, 
+nomor telepon orang tua, dan alamat.
+Utama
+Pengelolaan Penyewaan
+Menghubungkan penghuni dengan 
+kamar, lengkap dengan tanggal, durasi, 
+dan harga.
+Utama
+Pencatatan Pembayaran
+Mencatat pembayaran tiap periode 
+beserta statusnya.
+Utama
+Riwayat dan Detail 
+Transaksi
+Menelusuri riwayat sewa dan 
+pembayaran yang tersimpan.
+Pendukung
+6
+
+=== PAGE 7 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Kebutuhan Nonfungsional dan Aturan Bisnis
+Kebutuhan nonfungsional
+Antarmuka berbahasa Indonesia dan 
+sederhana.
+Dijalankan secara lokal lewat terminal 
+VS Code.
+Data disimpan di database SQLite.
+Kesalahan input ditampilkan sebagai 
+pesan yang mudah dipahami.
+Dependensi (library yang dibutuhkan) 
+dicatat di requirements.txt.
+Aturan bisnis
+Kode Jika ... Maka ... Contoh diterima Contoh ditolak
+B01 nomor kamar sudah dipakai kamar lain sistem menolak kamar baru Kamar baru A26 Kamar baru A01 saat A01 sudah ada
+B06
+tanggal selesai sama 
+dengan atau sebelum 
+tanggal mulai
+sistem menolak 
+sewa
+01-01-2027 s.d. 31-03-
+2027
+15-12-2026 s.d. 10-12-
+2026
+B08 nominal pembayaran 0 atau kurang sistem menolak pembayaran Nominal sama dengan harga sewa Nominal 0
+B10
+kamar atau penghuni 
+sudah punya riwayat 
+sewa
+sistem menolak 
+penghapusan
+Menghapus kamar yang 
+belum pernah disewa
+Menghapus kamar A01 
+yang punya riwayat sewa
+B14
+sewa sudah punya 
+pembayaran untuk bulan 
+dan tahun yang sama
+sistem menolak 
+pembayaran kedua
+Sewa S001 periode 
+Januari 2027 (belum ada 
+pembayarannya)
+Pembayaran kedua untuk 
+S001 periode Januari 
+2027
+Tanggal ditampilkan DD-MM-YYYY, tersimpan di database sebagai YYYY-MM-DD.
+7
+
+=== PAGE 8 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Alur Proses Bisnis
+Proses manual
+Ada sembilan langkah dengan 
+catatan yang terpisah-pisah, dan 
+pengecekan ulang harus dilakukan 
+satu per satu.
+Dengan KOSPACE
+Data tersimpan di database, 
+sehingga ketersediaan kamar , harga, 
+dan riwayat bisa dicek kapan saja.
+8
+
+=== PAGE 9 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Status Kamar , Status Pembayaran, dan Jadwal Sewa
+Status kamar
+Ditempati
+Kamar punya sewa Aktif, dan tanggal 
+hari ini berada di antara tanggal mulai 
+dan selesai sewa.
+Tersedia
+Kamar tidak punya sewa seperti itu. 
+Sewa yang tanggal selesainya sudah 
+lewat otomatis menjadi Selesai.
+Status pembayaran
+Lunas
+Pembayaran untuk periode itu sudah 
+dicatat.
+Belum Dibayar
+Belum membayar, tetapi belum 
+melewati jatuh tempo (tanggal 10).
+Terlambat
+Belum membayar dan sudah melewati 
+tanggal 10.
+Jadwal bertabrakan
+Contoh: Kamar A01 disewa sampai 31-
+12-2026, sedangkan calon penghuni 
+baru ingin masuk 15-12-2026.
+Aturan: bentrok jika tanggal mulai baru 
+Γëñ tanggal selesai lama DAN tanggal 
+selesai baru ΓëÑ tanggal mulai lama.
+Sewa ditolak Penghuni baru baru bisa mulai 01-01-2027.
+9
+
+=== PAGE 10 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Empat Entitas Database
+Kamar
+Informasi setiap kamar.
+PK: id_kamar
+nomor_kamar, tipe, 
+harga_bulanan, fasilitas, status
+Penghuni
+Identitas orang yang 
+menyewa.
+PK: id_penghuni
+nama, telepon, telepon_ortu, 
+alamat
+Sewa
+Menghubungkan penghuni 
+dengan kamar yang disewa.
+PK: id_sewa
+id_penghuni, id_kamar, 
+tanggal_mulai, tanggal_selesai, 
+durasi, harga_bulanan, 
+status_sewa
+Pembayaran
+Catatan pembayaran uang 
+sewa per periode.
+PK: id_pembayaran
+id_sewa, periode_bulan, 
+periode_tahun, tanggal_bayar, 
+nominal, status_pembayaran
+10
+
+=== PAGE 11 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Relasi Antarentitas (ERD)
+Tiga relasi 1:N
+1 : N Kamar ΓÇô Sewa
+1 : N Penghuni ΓÇô Sewa
+1 : N Sewa ΓÇô Pembayaran
+ΓÇó Kamar boleh belum punya sewa.
+ΓÇó Setiap sewa harus punya tepat 
+satu kamar dan satu penghuni.
+ΓÇó Setiap pembayaran harus terkait 
+dengan satu sewa.
+11
+
+=== PAGE 12 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Primary Key, Foreign Key, dan Kode Bisnis
+Primary Key (PK)
+Identitas unik tiap data. Bertipe TEXT 
+dan dibuat otomatis oleh Python.
+Foreign Key (FK)
+Sewa terhubung ke Penghuni 
+(id_penghuni) dan Kamar (id_kamar). 
+Pembayaran terhubung ke Sewa 
+(id_sewa).
+Kode bisnis
+nomor_kamar (A01, B01, C01) adalah 
+kode yang dikenal pemilik dan tidak 
+boleh kembar. id_kamar hanya 
+dipakai di dalam sistem.
+Format ID otomatis
+K001
+Kamar
+P001
+Penghuni
+S001
+Sewa
+BY001
+Pembayaran
+12
+
+=== PAGE 13 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Kamus Data dan Ketentuan Atribut
+Kolom Tipe Ketentuan
+nomor_kamar TEXT Wajib diisi dan tidak boleh sama.
+harga_bulanan (Kamar) INTEGER Lebih dari 0. Harga kamar yang berlaku saat ini.
+harga_bulanan (Sewa) INTEGER Lebih dari 0. Harga yang disepakati saat sewa dibuat.
+tanggal_selesai TEXT Harus setelah tanggal_mulai (format YYYY-MM-DD).
+durasi INTEGER Bilangan bulat lebih dari 0.
+nominal INTEGER Lebih dari 0 dan sama dengan harga_bulanan pada sewa.
+periode_bulan INTEGER 1 sampai 12. Satu sewa hanya boleh punya satu pembayaran per periode.
+status_pembayaran TEXT Lunas, Belum Dibayar, atau T erlambat.
+13
+
+=== PAGE 14 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Harga Bulanan dan Normalisasi
+harga_bulanan ada di dua tabel
+Kamar
+Harga yang berlaku saat ini dan bisa berubah.
+disalin saat sewa dibuat
+Sewa
+Harga yang disepakati dan tidak berubah.
+Ini disengaja agar riwayat sewa dan pembayaran tidak ikut 
+berubah saat harga kamar naik atau turun.
+1NF Setiap kolom berisi satu nilai, dan setiap tabel punya primary key.
+2NF Primary key hanya satu kolom, jadi tidak ada ketergantungan sebagian.
+3NF
+Data penghuni dan kamar tidak ditulis ulang di 
+tabel Sewa maupun Pembayaran. Pengecualian 
+yang disengaja: harga_bulanan.
+14
+
+=== PAGE 15 ===
+ KOSPACE  |  Progres Perancangan Sistem Administrasi Pengelolaan Kos
+Aturan Penghapusan dan Integritas Data
+Kamar
+Tidak bisa dihapus jika punya 
+riwayat sewa. Hanya kamar 
+yang belum punya data terkait 
+yang boleh dihapus.
+Penghuni
+Tidak bisa dihapus jika punya 
+catatan sewa. Datanya tetap 
+bisa ditelusuri lewat filter 
+riwayat.
+Sewa
+Tidak bisa dihapus jika sudah 
+ada pembayaran. Sewa yang 
+berhenti lebih awal diubah 
+statusnya menjadi Selesai.
+Pembayaran
+Hanya boleh dihapus untuk 
+memperbaiki salah catat, dan 
+tidak memengaruhi tabel lain.
+Penjaga integritas
+NOT NULL
+wajib diisi
+UNIQUE
+tidak boleh sama
+CHECK
+nilai harus sesuai aturan
+FK RESTRICT
+data yang masih dipakai tidak 
+bisa dihapus
+15
+
+=== PAGE 16 ===
+ Terima Kasih
+Apakah ada yang ingin ditanyakan?
