@@ -40,7 +40,7 @@ def render() -> None:
           <div class="ks-hero-grid">
             <div>
               <div class="ks-hero-eyebrow">Selamat datang, Pemilik Kos</div>
-              <div class="ks-hero-title">Kos Putri KOSPACE 🏡</div>
+              <div class="ks-hero-title">KOSPACE 🏡</div>
               <div class="ks-hero-sub">
                 {m['total_kamar']} kamar · {m['sewa_aktif']} sewa aktif ·
                 {m['tersedia']} kamar siap dihuni. Semua data kamar, penghuni, sewa,

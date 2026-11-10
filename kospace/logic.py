@@ -578,6 +578,12 @@ def create_pembayaran(id_sewa, periode_bulan, periode_tahun, tanggal_bayar, nomi
         raise BusinessError("Tahun periode tidak valid.")
     nominal_int = _angka_positif(nominal, "Nominal pembayaran")
     tanggal = parse_date(tanggal_bayar)
+    hari_ini = date.today()
+    if tanggal > hari_ini:
+        raise BusinessError(
+            f"Tanggal pembayaran ({tanggal.strftime('%d-%m-%Y')}) tidak boleh melebihi "
+            f"tanggal input transaksi ({hari_ini.strftime('%d-%m-%Y')})."
+        )
 
     try:
         with db.connection() as conn:

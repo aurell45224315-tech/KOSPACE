@@ -44,7 +44,9 @@ def payment_form(sewa: dict, key_prefix: str) -> None:
         tanggal_bayar = st.date_input(
             "Tanggal pembayaran",
             value=date.today(),
+            max_value=date.today(),
             key=f"{key_prefix}_tanggal",
+            help="Tanggal pembayaran tidak boleh melebihi tanggal input transaksi (hari ini).",
         )
 
     if tagihan["status"] == "Terlambat":
