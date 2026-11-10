@@ -67,6 +67,10 @@ _CSS = """
 html, body, [class*="st-"] {
   font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
 }
+/* Selector [class*="st-"] ikut menimpa span ikon Material; kembalikan font ikonnya. */
+[data-testid="stIconMaterial"] {
+  font-family: "Material Symbols Rounded" !important;
+}
 .stApp {
   background:
     radial-gradient(1200px 420px at 15% -10%, rgba(14,116,144,.08), transparent 60%),
